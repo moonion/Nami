@@ -449,6 +449,22 @@ function GetConfigJson() {
 	GetConfigJson.super_.call(this, 'GetConfigJson');
 }
 
+/*
+ * UpdateConfig Action.
+ * @constructor
+ * @see Action(String)
+ * @see See <a href="https://wiki.asterisk.org/wiki/display/AST/ManagerAction_UpdateConfig">https://wiki.asterisk.org/wiki/display/AST/ManagerAction_UpdateConfig</a>.
+ * @property {String} ActionID - ActionID for this transaction. Will be returned.
+ * @property {String} SrcFilename - Configuration filename to read (e.g. foo.conf).
+ * @property {String} DstFilename - Configuration filename to write (e.g. foo.conf)
+ * @property {String} Reload - Whether or not a reload should take place (or name of specific module).
+ * @property {String} Action-XXXXXX - Action to take.
+ * @augments Action
+ */
+function UpdateConfig() {
+        UpdateConfig.super_.call(this, 'UpdateConfig');
+}
+
 /**
  * GetVar Action.
  * @constructor
@@ -1243,6 +1259,7 @@ util.inherits(Action, message.Message);
         ExtensionState,
         GetConfig,
         GetConfigJson,
+	UpdateConfig,
         GetVar,
         SetVar,
         JabberSend,
